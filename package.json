@@ -1,0 +1,16 @@
+{
+  "name": "name-tbd",
+  "version": "1.0.0",
+  "description": "A soon to be determined jounral app thing",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://reedforspeed@bitbucket.org/stefika/cs472spring2020team6.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/stefika/cs472spring2020team6#readme"
+}
