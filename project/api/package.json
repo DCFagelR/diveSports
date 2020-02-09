@@ -6,6 +6,7 @@
     "lint": "eslint '**/*.js' --ignore-path .gitignore",
     "lint:fix": "eslint '**/*.js' --fix --ignore-path .gitignore",
     "start": "node --require @babel/polyfill --require @babel/register src/index.js",
+    "watch": "nodemon --require @babel/polyfill --require @babel/register src/index.js",
     "test": "jest",
     "test:watch": "jest --watchAll"
   },
@@ -33,6 +34,7 @@
     "jest-environment-jsdom-fourteen": "0.1.0",
     "jest-resolve": "24.9.0",
     "jest-watch-typeahead": "0.4.2",
+    "nodemon": "^2.0.2",
     "prettier": "^1.19.1",
     "supertest": "^4.0.2"
   },
