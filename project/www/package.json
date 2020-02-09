@@ -109,7 +109,7 @@
       "<rootDir>/test/testUtil/setupTests.js"
     ],
     "testMatch": [
-      "<rootDir>/test/**/*.{spec,unit.test}.{js,jsx,ts,tsx}"
+      "<rootDir>/test/**/*.{spec,test}.{js,jsx,ts,tsx}"
     ],
     "testEnvironment": "jest-environment-jsdom-fourteen",
     "transform": {

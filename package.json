@@ -1,7 +1,7 @@
 {
   "name": "name-tbd",
   "version": "1.0.0",
-  "description": "A soon to be determined jounral app thing",
+  "description": "A sports meetup app",
   "scripts": {
     "lint:api:fix": "cd ./project/api && npm run lint:fix && cd -",
     "lint:api": "cd ./project/api && npm run lint && cd -",
