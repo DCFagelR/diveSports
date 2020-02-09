@@ -5,5 +5,5 @@ describe('healthcheck', () => {
   it('returns a healthy status', () =>
     request(createServer())
       .get('/healthcheck')
-      .expect(200));
+      .expect(400));
 });
