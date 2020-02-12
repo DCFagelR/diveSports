@@ -1,16 +1,31 @@
 {
   "name": "name-tbd",
   "version": "1.0.0",
-  "description": "A soon to be determined jounral app thing",
-  "main": "index.js",
+  "description": "A sports meetup app",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint:api:fix": "cd ./project/api && npm run lint:fix && cd -",
+    "lint:api": "cd ./project/api && npm run lint && cd -",
+    "test:api": "cd ./project/api && npm run test && cd -",
+    "lint:www:fix": "cd ./project/www && npm run lint:fix && cd -",
+    "lint:www": "cd ./project/www && npm run lint && cd -",
+    "test:www": "cd ./project/www && npm run test:deploy && cd -",
+    "test": "npm run test:api && npm run test:www",
+    "lint": "npm run lint:api && npm run lint:www"
   },
   "repository": {
     "type": "git",
     "url": "git+https://reedforspeed@bitbucket.org/stefika/cs472spring2020team6.git"
   },
-  "author": "",
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint",
+      "pre-push": "npm run test"
+    }
+  },
+  "author": "Team 6",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/stefika/cs472spring2020team6#readme"
+  "homepage": "https://bitbucket.org/stefika/cs472spring2020team6#readme",
+  "devDependencies": {
+    "husky": "^4.2.1"
+  }
 }
