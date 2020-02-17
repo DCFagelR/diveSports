@@ -1,9 +1,9 @@
 import React from 'react';
 import { Container, Row, Col } from 'reactstrap';
 
-import Highlight from '../components/Highlight.jsx';
-import Loading from '../components/Loading.jsx';
-import { useAuth0 } from '../react-auth0-spa';
+import Highlight from '../Highlight.jsx';
+import Loading from '../Loading.jsx';
+import { useAuth0 } from '../../react-auth0-spa';
 
 const Profile = () => {
   const { loading, user } = useAuth0();

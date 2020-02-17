@@ -20,7 +20,7 @@ import {
 
 import { useAuth0 } from '../react-auth0-spa';
 
-const NavBar = () => {
+const PrimaryNav = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { user, isAuthenticated, loginWithRedirect, logout } = useAuth0();
   const toggle = () => setIsOpen(!isOpen);
@@ -152,4 +152,4 @@ const NavBar = () => {
   );
 };
 
-export default NavBar;
+export default PrimaryNav;

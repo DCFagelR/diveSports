@@ -2,22 +2,22 @@ import React from 'react';
 import { Router, Route, Switch } from 'react-router-dom';
 import { Container } from 'reactstrap';
 
-import PrivateRoute from './components/PrivateRoute.jsx';
+import Home from './components/home/Home.jsx';
 import Loading from './components/Loading.jsx';
-import NavBar from './components/NavBar.jsx';
-import Home from './views/Home.jsx';
-import Profile from './views/Profile.jsx';
-import { useAuth0 } from './react-auth0-spa';
-import history from './utils/history';
+import PrimaryNav from './components/PrimaryNav.jsx';
+import PrivateRoute from './components/PrivateRoute.jsx';
+import Profile from './components/profile/Profile.jsx';
 
-// styles
+import { useAuth0 } from './react-auth0-spa';
+
+import history from './utils/history';
+import initFontAwesome from './utils/initFontAwesome';
+
 import './App.css';
 
-// fontawesome
-import initFontAwesome from './utils/initFontAwesome';
 initFontAwesome();
 
-const App = () => {
+export default () => {
   const { loading } = useAuth0();
 
   if (loading) {
@@ -27,7 +27,7 @@ const App = () => {
   return (
     <Router history={history}>
       <div id="app" className="d-flex flex-column h-100">
-        <NavBar />
+        <PrimaryNav />
         <Container className="flex-grow-1 mt-5">
           <Switch>
             <Route path="/" exact component={Home} />
@@ -38,5 +38,3 @@ const App = () => {
     </Router>
   );
 };
-
-export default App;
