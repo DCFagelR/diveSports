@@ -21,7 +21,7 @@ export default () => {
   const { loading } = useAuth0();
 
   if (loading) {
-    return <Loading />;
+    return <Loading id="app-loading" />;
   }
 
   return (
