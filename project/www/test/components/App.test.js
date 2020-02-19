@@ -1,16 +1,47 @@
 import React from 'react';
-import { render } from '@testing-library/react';
-import App from '../../src/components/App';
+import { shallow } from 'enzyme';
+import * as auth0Util from '../../src/react-auth0-spa';
+import App from '../../src/App';
 
-describe('The first test', () => {
-  let link;
+describe('App.js', () => {
+  let instance;
+  let useAuth0Stub;
 
   beforeEach(() => {
-    const { getByText } = render(<App />);
-    link = getByText(/learn react/i);
+    useAuth0Stub = stubImport(sandbox, auth0Util, 'useAuth0');
   });
 
-  it('renders learn react link', () => {
-    expect(link).to.exist;
+  afterEach(() => {
+    instance.unmount();
+  });
+
+  context('when loading', () => {
+    beforeEach(() => {
+      useAuth0Stub.returns({ loading: true });
+      instance = shallow(<App />);
+    });
+
+    it('renders the loading component', () => {
+      expect(instance.exists('#app-loading')).to.be.true;
+    });
+
+    it('does not render the app', () => {
+      expect(instance.exists('#app')).to.be.false;
+    });
+  });
+
+  context('when not loading', () => {
+    beforeEach(() => {
+      useAuth0Stub.returns({ loading: false });
+      instance = shallow(<App />);
+    });
+
+    it('renders the loading component', () => {
+      expect(instance.exists('#app-loading')).to.be.false;
+    });
+
+    it('renders the app', () => {
+      expect(instance.exists('#app')).to.be.true;
+    });
   });
 });

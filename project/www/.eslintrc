@@ -6,7 +6,10 @@
   },
   "globals": {
     "expect": true,
-    "browser": true
+    "browser": true,
+    "stubImport": true,
+    "sandbox": true,
+    "context": true
   },
   "rules": {
     "import/extensions": 0,
